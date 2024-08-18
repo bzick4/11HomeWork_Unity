@@ -6,6 +6,10 @@ TagManager:
   tags:
   - RestartScene
   - Ball
+  - FxTemporaire
+  - Obstacle
+  - Obstcales
+  - NextLevel
   layers:
   - Default
   - TransparentFX

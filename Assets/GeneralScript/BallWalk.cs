@@ -9,7 +9,7 @@ public class BallWalk : MonoBehaviour
     private Rigidbody ball;
     private Vector3 moveVector;
     private Animator animator;
-    //private float vert, horiz;
+    private float vert, horiz;
     [SerializeField] private float _rotationSpeed, _force;
     
 
@@ -19,7 +19,12 @@ public class BallWalk : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    
+    private void Update()
+    {
+        horiz = Input.GetAxis("Horizontal");
+        vert = Input.GetAxis("Vertical");
+    }
+
     private void FixedUpdate()
     {
         WalkBall();
@@ -28,19 +33,17 @@ public class BallWalk : MonoBehaviour
 
     public void WalkBall()
     {
-        float horiz = Input.GetAxis("Horizontal");
-        float vert = Input.GetAxis("Vertical");
         Vector3 direct = new Vector3(vert, 0, -horiz);
-       
+        
         if (direct.magnitude > Math.Abs(0.1))
         {
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(direct), Time.fixedDeltaTime * _rotationSpeed);
         }
-
-        animator.SetFloat("Velocity", Vector3.ClampMagnitude(direct, 1).magnitude); 
         
+        animator.SetFloat("Velocity", Vector3.ClampMagnitude(direct, 1).magnitude);
         ball.AddForce(Vector3.ClampMagnitude(direct, 1) * _force, ForceMode.Force);
-        
+
     }
 
+   
 }
