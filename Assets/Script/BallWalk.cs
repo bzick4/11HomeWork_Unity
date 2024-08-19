@@ -7,10 +7,10 @@ using UnityEngine;
 public class BallWalk : MonoBehaviour
 {
     private Rigidbody ball;
-    private Vector3 moveVector;
+    private Vector3 direct;
     private Animator animator;
     private float vert, horiz;
-    [SerializeField] private float _rotationSpeed, _force;
+    [SerializeField, Range(0,30)] private float _rotationSpeed, _force;
     
 
     private void Start()
@@ -21,6 +21,7 @@ public class BallWalk : MonoBehaviour
 
     private void Update()
     {
+        direct = new Vector3(vert, 0, -horiz);
         horiz = Input.GetAxis("Horizontal");
         vert = Input.GetAxis("Vertical");
     }
@@ -33,15 +34,13 @@ public class BallWalk : MonoBehaviour
 
     public void WalkBall()
     {
-        Vector3 direct = new Vector3(vert, 0, -horiz);
-        
         if (direct.magnitude > Math.Abs(0.1))
         {
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(direct), Time.fixedDeltaTime * _rotationSpeed);
         }
-        
+
         animator.SetFloat("Velocity", Vector3.ClampMagnitude(direct, 1).magnitude);
-        ball.AddForce(Vector3.ClampMagnitude(direct, 1) * _force, ForceMode.Force);
+        ball.AddForce(Vector3.ClampMagnitude(direct, 1)* _force);
 
     }
 
