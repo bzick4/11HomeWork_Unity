@@ -10,12 +10,9 @@ TagManager:
   - Obstacle
   - Obstcales
   - NextLevel
-  - Level1
-  - Level2
-  - Level3
-  - Level4
   - Level5
   - OpenDoor
+  - ChooseLevel
   layers:
   - Default
   - TransparentFX

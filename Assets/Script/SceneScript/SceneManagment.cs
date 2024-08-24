@@ -18,29 +18,5 @@ public class SceneManagment : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         } 
         
-        if (other.CompareTag("Level1"))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
-        }
-        
-        if (other.CompareTag("Level2"))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+2);
-        }
-        
-        if (other.CompareTag("Level3"))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+3);
-        }
-        
-        if (other.CompareTag("Level4"))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+4);
-        }
-        
-        if (other.CompareTag("Level5"))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+5);
-        }
     }
 }

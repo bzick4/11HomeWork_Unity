@@ -19,7 +19,6 @@ using UnityEngine;
      private void CameraBall()
      {
          Vector3 desire = playerBall.position + offset;
-         //transform.position = playerBall.position + offset; 
          Vector3 smoothPos = Vector3.Lerp(transform.position, desire, smooth * Time.deltaTime);
          transform.position = smoothPos;
          transform.LookAt(playerBall);

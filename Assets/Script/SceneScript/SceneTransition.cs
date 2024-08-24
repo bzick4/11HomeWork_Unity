@@ -7,9 +7,13 @@ public class SceneTransition : MonoBehaviour
 {
    [SerializeField] private int numberScene;
 
-   public void TransitionScene()
+   private void OnTriggerEnter(Collider other)
    {
-      SceneManager.LoadScene(numberScene);
+       if (other.CompareTag("Ball"))
+       {
+           SceneManager.LoadScene(numberScene);
+       }
    }
    
+
 }
