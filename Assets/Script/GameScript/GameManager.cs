@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class DoorManager : MonoBehaviour
 {
     [SerializeField] private GameObject _panel;
     [SerializeField] private DoorOpen _doorOpen;
