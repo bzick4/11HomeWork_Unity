@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class AnimationScript : MonoBehaviour
 {
-    private Animator anim;
+    private Animator animator;
+    private Animation animation;
     private Rigidbody rb;
+   
     void Start()
     {
-        anim = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        anim.SetFloat("Velocity", rb.velocity.magnitude);
+        animator.SetFloat("Velocity", rb.velocity.magnitude);
     }
 }

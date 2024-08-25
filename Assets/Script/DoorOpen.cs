@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DoorOpen : MonoBehaviour
 {
-    [SerializeField] private float _open, _door;
+    [SerializeField] private float _open=300, _door;
     
     private HingeJoint hingeJoint;
 
@@ -13,12 +13,7 @@ public class DoorOpen : MonoBehaviour
     {
         hingeJoint = GetComponent<HingeJoint>();
     }
-
-    private void FixedUpdate()
-    {
-        OpenDoor();
-    }
-
+    
     public void OpenDoor()
     {
         hingeJoint.useMotor = true;
@@ -27,5 +22,4 @@ public class DoorOpen : MonoBehaviour
         door.targetVelocity = _door;
         hingeJoint.motor = door;
     }
-    
 }

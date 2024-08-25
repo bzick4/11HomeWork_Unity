@@ -12,7 +12,6 @@ public class BallWalk : MonoBehaviour
     private float vert, horiz;
     [SerializeField, Range(0,30)] private float _force;
     
-
     private void Start()
     {
         ball = GetComponent<Rigidbody>();
@@ -42,8 +41,4 @@ public class BallWalk : MonoBehaviour
 
         animator.SetFloat("Velocity", Vector3.ClampMagnitude(direct, 1).magnitude);
     }
-
-   
-    
-    
 }
