@@ -7,10 +7,11 @@ using UnityEngine;
 public class BallWalk : MonoBehaviour
 {
     private Rigidbody ball;
-    private Vector3 direct;
     private Animator animator;
     private float vert, horiz;
-    [SerializeField, Range(0,30)] private float _force;
+    private Vector3 moveDirection;
+    [SerializeField] private Transform cameraTransform;
+    [SerializeField, Range(0,30)] private float _speed, _rotSpeed, _force;
     
     private void Start()
     {
@@ -20,25 +21,33 @@ public class BallWalk : MonoBehaviour
 
     private void Update()
     {
-        direct = new Vector3(horiz,0,vert);
-        horiz = Input.GetAxis("Horizontal");
         vert = Input.GetAxis("Vertical");
+        horiz = Input.GetAxis("Horizontal");
     }
 
     private void FixedUpdate()
     {
-        WalkBall2Ver();
+        Walk2();
     }
     
-    public void WalkBall2Ver()
+    public void Walk2()
     {
-        if (direct.magnitude > Math.Abs(0.1))
+        moveDirection = new Vector3(horiz, 0, vert);
+        moveDirection = Quaternion.AngleAxis(cameraTransform.rotation.eulerAngles.y, Vector3.up) * moveDirection;
+        if (vert > 0.0f)
         {
-            direct =((transform.right * vert) + (-horiz * transform.forward)).normalized;
-            ball.MovePosition((transform.position + direct * _force * Time.fixedDeltaTime));
-            
+            ball.AddForce(moveDirection * _speed);
         }
-
-        animator.SetFloat("Velocity", Vector3.ClampMagnitude(direct, 1).magnitude);
+        else if (vert < 0f)
+        {
+            ball.AddForce(moveDirection * _speed);
+        }
+        else
+        {
+            moveDirection = Vector3.zero;
+        }
+        
+        animator.SetFloat("Velocity", Vector3.ClampMagnitude(moveDirection, 1).magnitude);
     }
+    
 }

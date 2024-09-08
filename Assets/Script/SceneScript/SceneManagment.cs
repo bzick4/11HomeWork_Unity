@@ -6,16 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagment : MonoBehaviour
 {
+    [SerializeField] private GameObject _panelWin, _panelLose;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("RestartScene"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            _panelLose.SetActive(true);
         }
 
         if (other.CompareTag("NextLevel"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            _panelWin.SetActive(true);
         } 
         
     }
