@@ -12,15 +12,16 @@ public class CoinScript : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Coin"))
+        if (other.gameObject.GetComponent<BallWalk>() !=null)
         {
             Debug.Log("jjjjj");
             totalCoin++;
             Destroy(other.gameObject);
+            Text();
         }
     }
     
-    private void Update()
+    private void Text()
     {
         _coin.text = totalCoin.ToString();
     }
