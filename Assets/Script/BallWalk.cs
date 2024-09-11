@@ -11,8 +11,8 @@ public class BallWalk : MonoBehaviour
     private float vert, horiz;
     private Vector3 moveDirection;
     [SerializeField] private Transform cameraTransform;
-    [SerializeField, Range(0,30)] private float _speed, _rotSpeed, _force;
-    
+    [SerializeField, Range(0,15)] private float _speed, _maxSpeed;
+
     private void Start()
     {
         ball = GetComponent<Rigidbody>();
@@ -28,8 +28,9 @@ public class BallWalk : MonoBehaviour
     private void FixedUpdate()
     {
         Walk2();
+        LimitSpeed();
     }
-    
+
     public void Walk2()
     {
         moveDirection = new Vector3(horiz, 0, vert);
@@ -46,8 +47,16 @@ public class BallWalk : MonoBehaviour
         {
             moveDirection = Vector3.zero;
         }
-        
+
         animator.SetFloat("Velocity", Vector3.ClampMagnitude(moveDirection, 1).magnitude);
+    }
+
+    public void LimitSpeed()
+    {
+        if (ball.velocity.magnitude > _maxSpeed)
+        {
+            ball.velocity = ball.velocity.normalized * _maxSpeed;
+        }
     }
     
 }

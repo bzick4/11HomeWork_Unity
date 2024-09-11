@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 6555337334600075109}
   - component: {fileID: 4177449215057343326}
   - component: {fileID: 122881659875468747}
+  - component: {fileID: 773388262232469706}
   m_Layer: 3
   m_Name: HeroBall
   m_TagString: Ball
@@ -201,6 +202,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b039070e3b7aa471095e22d22b841c0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _panelWin: {fileID: 0}
+  _panelLose: {fileID: 0}
 --- !u!114 &122881659875468747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,6 +217,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 0}
-  _speed: 16.9
-  _rotSpeed: 6.1
-  _force: 4.4
+  _speed: 15
+  _maxSpeed: 0
+--- !u!114 &773388262232469706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4198916418987001284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13c3082eb40ad4e0b894c553a61b5fb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _coin: {fileID: 0}

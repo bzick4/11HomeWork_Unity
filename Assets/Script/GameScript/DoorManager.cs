@@ -18,7 +18,7 @@ public class DoorManager : MonoBehaviour
             }
         }
 
-        private void OnTriggerExit(Collider other)
+     private void OnTriggerExit(Collider other)
         {
             if (other.CompareTag("Ball"))
             {
@@ -26,7 +26,7 @@ public class DoorManager : MonoBehaviour
             }
         }
 
-        private void PressKey()
+     private void PressKey()
         {
             if (Input.GetKey(KeyCode.E))
             {

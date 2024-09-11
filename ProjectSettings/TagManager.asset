@@ -13,6 +13,7 @@ TagManager:
   - Level5
   - OpenDoor
   - ChooseLevel
+  - Coin
   layers:
   - Default
   - TransparentFX
