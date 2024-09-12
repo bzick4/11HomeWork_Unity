@@ -16,7 +16,7 @@ public class CoinScript : MonoBehaviour
         {
             Debug.Log("jjjjj");
             totalCoin++;
-            Destroy(other.gameObject);
+            DestroyCoin();
             Text();
         }
     }
@@ -24,6 +24,11 @@ public class CoinScript : MonoBehaviour
     private void Text()
     {
         _coin.text = totalCoin.ToString();
+    }
+
+    private void DestroyCoin()
+    {
+        Destroy(gameObject.transform.parent.gameObject);
     }
 
 }

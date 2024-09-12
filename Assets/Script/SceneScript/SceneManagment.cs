@@ -1,12 +1,11 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneManagment : MonoBehaviour
 {
     [SerializeField] private GameObject _panelWin, _panelLose;
+    [SerializeField] private int numberScene;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("RestartScene"))
@@ -17,7 +16,17 @@ public class SceneManagment : MonoBehaviour
         if (other.CompareTag("NextLevel"))
         {
             _panelWin.SetActive(true);
-        } 
-        
+        }
     }
-}
+
+    public void Restart()
+        {
+            SceneManager.LoadScene(numberScene);
+        }
+
+        public void NextLevel()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+    }
+
