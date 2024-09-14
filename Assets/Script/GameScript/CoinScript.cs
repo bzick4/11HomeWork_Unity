@@ -8,13 +8,12 @@ using Unity.VisualScripting;
 public class CoinScript : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _coin;
-    private int totalCoin;
+    public int totalCoin { get; private set;}
     
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<BallWalk>() !=null)
         {
-            Debug.Log("jjjjj");
             totalCoin++;
             DestroyCoin();
             Text();
@@ -30,5 +29,5 @@ public class CoinScript : MonoBehaviour
     {
         Destroy(gameObject.transform.parent.gameObject);
     }
-
+    
 }

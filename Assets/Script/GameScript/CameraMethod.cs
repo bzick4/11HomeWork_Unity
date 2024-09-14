@@ -10,7 +10,6 @@ using UnityEngine;
      private void Start()
      {
         offset = transform.position - playerBall.position;
-         
      }
 
      private void FixedUpdate()

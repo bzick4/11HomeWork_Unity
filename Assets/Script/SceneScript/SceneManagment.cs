@@ -1,30 +1,28 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneManagment : MonoBehaviour
 {
-    [SerializeField] private GameObject _panelWin, _panelLose;
+    [SerializeField] private TMP_Text _level;
     [SerializeField] private int numberScene;
-
-    private void OnTriggerEnter(Collider other)
+    
+    private void Update()
     {
-        if (other.CompareTag("RestartScene"))
-        {
-            _panelLose.SetActive(true);
-        }
-
-        if (other.CompareTag("NextLevel"))
-        {
-            _panelWin.SetActive(true);
-        }
+        _level.text = numberScene.ToString();
     }
-
+    
+    public void Exit()
+    {
+        SceneManager.LoadScene(0);
+    }
+    
     public void Restart()
         {
             SceneManager.LoadScene(numberScene);
         }
-
-        public void NextLevel()
+    
+    public void NextLevel()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }

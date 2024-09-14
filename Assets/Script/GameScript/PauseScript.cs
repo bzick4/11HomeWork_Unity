@@ -5,20 +5,20 @@ using UnityEngine;
 public class PauseScript : MonoBehaviour
 
     {
-        private bool isPauseGame;
-
-        public void PausedGame()
-        {
-            if (isPauseGame)
-            {
-                Time.timeScale = 1;
-            }
-            else
-            {
-                Time.timeScale = 0;
-            }
-
-            isPauseGame = !isPauseGame;
+        public bool isPauseGame { get; private set; }
+        
+         public void PausedGame()
+         {
+             if (isPauseGame)
+             {
+                 Time.timeScale = 1;
+             }
+             else
+             {
+                 Time.timeScale = 0;
+             }
+        
+             isPauseGame = !isPauseGame;
         }
     }
 

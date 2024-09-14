@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 8666336391768228193}
   - component: {fileID: 6801435080413950855}
   - component: {fileID: 6555337334600075109}
-  - component: {fileID: 4177449215057343326}
   - component: {fileID: 122881659875468747}
   m_Layer: 3
   m_Name: HeroBall
@@ -189,20 +188,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4177449215057343326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4198916418987001284}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b039070e3b7aa471095e22d22b841c0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _panelWin: {fileID: 0}
-  _panelLose: {fileID: 0}
 --- !u!114 &122881659875468747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,4 +202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 0}
   _speed: 15
-  _maxSpeed: 0
+  _maxSpeed: 9.9
+  _pauseScript: {fileID: 0}
+  _panelWin: {fileID: 0}
+  _panelLose: {fileID: 0}
