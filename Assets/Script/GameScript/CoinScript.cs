@@ -1,33 +1,33 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
-using Unity.VisualScripting;
+using UnityEngine;
+
+
 
 public class CoinScript : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _coin;
-    public int totalCoin { get; private set;}
+    public static event Action OnGiveCoin;
+    [SerializeField] private GameObject _destroyEffect;
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<BallWalk>() !=null)
+        if (!other.TryGetComponent<BallWalk>(out var ballWalk)) return;
         {
-            totalCoin++;
+            OnGiveCoin?.Invoke();
+            DestroyEffect();
             DestroyCoin();
-            Text();
         }
     }
     
-    private void Text()
-    {
-        _coin.text = totalCoin.ToString();
-    }
-
     private void DestroyCoin()
     {
-        Destroy(gameObject.transform.parent.gameObject);
+        gameObject.SetActive(false);
     }
     
+    private void DestroyEffect()
+    {
+        _destroyEffect.SetActive(true);
+    }
+   
+
 }

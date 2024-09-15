@@ -15,7 +15,8 @@ public class BallWalk : MonoBehaviour
     [SerializeField, Range(0,15)] private float _speed, _maxSpeed;
     [SerializeField] private PauseScript _pauseScript;
     [SerializeField] private GameObject _panelWin, _panelLose, _panelChek;
-    private CoinScript _coin;
+    [SerializeField] private CoinManager _coinManager;
+   // [SerializeField] private GameObject _particleWin, _particleLose, _particleWalk;
 
     private void Start()
     {
@@ -43,14 +44,17 @@ public class BallWalk : MonoBehaviour
             if (vert > 0.0f)
             {
                 ball.AddForce(moveDirection * _speed);
+                //_particleWalk.SetActive(true);
             }
             else if (vert < 0f)
             {
                 ball.AddForce(moveDirection * _speed);
+                //_particleWalk.SetActive(true);
             }
             else
             {
                 moveDirection = Vector3.zero;
+                //_particleWalk.SetActive(false);
             }
 
             animator.SetFloat("Velocity", Vector3.ClampMagnitude(moveDirection, 1).magnitude);
@@ -69,21 +73,30 @@ public class BallWalk : MonoBehaviour
         if (other.CompareTag("RestartScene"))
         {
             _panelLose.SetActive(true);
-            _pauseScript.PausedGame();
+            // _particleLose.SetActive(true);
+            Invoke("Pause",1f);
         }
 
         if (other.CompareTag("NextLevel"))
         {
-            if (_coin.totalCoin >= 6)
+            if (_coinManager.totalCoin >= 6)
             {
                 _panelWin.SetActive(true);
-                _pauseScript.PausedGame();
+               // _particleWin.SetActive(true);
+                Invoke("Pause",1f);
             }
             else
             {
                 _panelChek.SetActive(true);
+                _pauseScript.PausedGame();
             }
         }
     }
+
+    private void Pause()
+    {
+        _pauseScript.PausedGame();
+    }
+    
     
 }
