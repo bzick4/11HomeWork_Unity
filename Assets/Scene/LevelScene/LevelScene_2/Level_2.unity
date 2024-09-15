@@ -19468,6 +19468,14 @@ PrefabInstance:
       propertyPath: _coin
       value: 
       objectReference: {fileID: 303844496}
+    - target: {fileID: 1746045473543308986, guid: 5b51fd9637b1e4a729b54ad5950ec90c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059997743701168600, guid: 5b51fd9637b1e4a729b54ad5950ec90c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4177449215057343326, guid: 5b51fd9637b1e4a729b54ad5950ec90c, type: 3}
       propertyPath: _panelWin
       value: 
@@ -19483,6 +19491,10 @@ PrefabInstance:
     - target: {fileID: 4198916418987001284, guid: 5b51fd9637b1e4a729b54ad5950ec90c, type: 3}
       propertyPath: m_TagString
       value: Ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 5545582407178163714, guid: 5b51fd9637b1e4a729b54ad5950ec90c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
