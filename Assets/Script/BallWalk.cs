@@ -16,7 +16,8 @@ public class BallWalk : MonoBehaviour
     [SerializeField] private PauseScript _pauseScript;
     [SerializeField] private GameObject _panelWin, _panelLose, _panelChek;
     [SerializeField] private CoinManager _coinManager;
-   [SerializeField] private GameObject  _particleLose,_particleWin ,_particleWalk;
+    [SerializeField] private GameObject _particleLose, _particleWin;
+    
 
     private void Start()
     {
@@ -44,17 +45,17 @@ public class BallWalk : MonoBehaviour
             if (vert > 0.0f)
             {
                 ball.AddForce(moveDirection * _speed);
-                _particleWalk.SetActive(true);
+                //_particleWalk.SetActive(true);
             }
             else if (vert < 0f)
             {
                 ball.AddForce(moveDirection * _speed);
-                _particleWalk.SetActive(true);
+                //_particleWalk.SetActive(true);
             }
             else
             {
                 moveDirection = Vector3.zero;
-                _particleWalk.SetActive(false);
+                //_particleWalk.SetActive(false);
             }
 
             animator.SetFloat("Velocity", Vector3.ClampMagnitude(moveDirection, 1).magnitude);
@@ -74,7 +75,6 @@ public class BallWalk : MonoBehaviour
         {
             _panelLose.SetActive(true);
             _particleLose.SetActive(true);
-            _particleWalk.SetActive(false);
             Invoke("Pause",1f);
         }
 
@@ -83,7 +83,6 @@ public class BallWalk : MonoBehaviour
             if (_coinManager.totalCoin >= 6)
             {
                 _panelWin.SetActive(true);
-                _particleWalk.SetActive(false);
                 _particleWin.SetActive(true);
                 Invoke("Pause",1f);
             }
