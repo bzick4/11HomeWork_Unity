@@ -34,28 +34,25 @@ public class BallWalk : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Walk2();
+        Walk();
         LimitSpeed();
     }
 
-    public void Walk2()
+    public void Walk()
     {
             moveDirection = new Vector3(horiz, 0, vert);
             moveDirection = Quaternion.AngleAxis(cameraTransform.rotation.eulerAngles.y, Vector3.up) * moveDirection;
             if (vert > 0.0f)
             {
                 ball.AddForce(moveDirection * _speed);
-                //_particleWalk.SetActive(true);
             }
             else if (vert < 0f)
             {
                 ball.AddForce(moveDirection * _speed);
-                //_particleWalk.SetActive(true);
             }
             else
             {
                 moveDirection = Vector3.zero;
-                //_particleWalk.SetActive(false);
             }
 
             animator.SetFloat("Velocity", Vector3.ClampMagnitude(moveDirection, 1).magnitude);
@@ -73,7 +70,7 @@ public class BallWalk : MonoBehaviour
     {
         if (other.CompareTag("RestartScene"))
         {
-            _panelLose.SetActive(true);
+            Invoke("ActivePanelLose",1f);
             _particleLose.SetActive(true);
             Invoke("Pause",1f);
         }
@@ -82,14 +79,14 @@ public class BallWalk : MonoBehaviour
         {
             if (_coinManager.totalCoin >= 6)
             {
-                _panelWin.SetActive(true);
+                Invoke("ActivePanelWin",1f);
                 _particleWin.SetActive(true);
                 Invoke("Pause",1f);
             }
             else
             {
                 _panelChek.SetActive(true);
-                _pauseScript.PausedGame();
+                Pause();
             }
         }
     }
@@ -98,6 +95,14 @@ public class BallWalk : MonoBehaviour
     {
         _pauseScript.PausedGame();
     }
-    
-    
+
+    private void ActivePanelWin()
+    {
+        _panelWin.SetActive(true);
+    }
+
+    private void ActivePanelLose()
+    {
+        _panelLose.SetActive(true);
+    }
 }
