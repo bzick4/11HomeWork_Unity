@@ -75,7 +75,7 @@ public class BallWalk : MonoBehaviour
             Invoke("Pause",1f);
         }
 
-        if (other.CompareTag("NextLevel"))
+        if (other.CompareTag("Finish"))
         {
             if (_coinManager.totalCoin >= 6)
             {
