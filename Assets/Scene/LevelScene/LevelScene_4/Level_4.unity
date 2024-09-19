@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 52d44e5692d0c134f9b2ed3abd21fb73, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
+  m_IndirectSpecularColor: {r: 0.3536611, g: 0.38757432, b: 0.44269204, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4942,7 +4942,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 532051406}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.23432562, y: 0.40168554, z: -0.10710799, w: 0.87878793}
+  m_LocalRotation: {x: 0.23432536, y: 0.40168518, z: -0.10710773, w: 0.8787882}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11052,7 +11052,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1135010253}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.25022957, y: 0.39967638, z: -0.114377536, w: 0.8743923}
+  m_LocalRotation: {x: 0.25022927, y: 0.39967597, z: -0.11437725, w: 0.87439257}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12515,7 +12515,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1409513192}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.26609293, y: 0.39752978, z: -0.12162854, w: 0.8696961}
+  m_LocalRotation: {x: 0.26609263, y: 0.3975294, z: -0.121628255, w: 0.8696963}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -15204,8 +15204,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1743772878}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.25022957, y: 0.39967632, z: -0.11437755, w: 0.8743923}
-  m_LocalPosition: {x: 16.459843, y: 2.56, z: -4.718477}
+  m_LocalRotation: {x: 0.25022927, y: 0.39967594, z: -0.114377245, w: 0.87439257}
+  m_LocalPosition: {x: 16.45984, y: 2.56, z: -4.718482}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -63514,17 +63514,9 @@ MonoBehaviour:
   m_Mesh: {fileID: 895535903}
   m_VersionIndex: 8840
   m_IsSelectable: 1
-  m_SelectedFaces: f5040000
-  m_SelectedEdges:
-  - a: 5079
-    b: 5076
-  - a: 5076
-    b: 5077
-  - a: 5078
-    b: 5079
-  - a: 5077
-    b: 5078
-  m_SelectedVertices: d7130000d4130000d5130000d6130000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!1 &1936684768
 GameObject:
   m_ObjectHideFlags: 0
